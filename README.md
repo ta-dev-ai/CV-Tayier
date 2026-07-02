@@ -18,6 +18,13 @@ Disponible pour **CDI**, **missions** et **collaborations** · Available for **f
 
 Sur la page : onglet **Français** ou **English**, puis bouton **Télécharger le CV** / **Download CV**.
 
+### Workflow local (avant tout push GitHub)
+
+1. Ouvrir `index.html` dans le navigateur (fichier local)
+2. Modifier le contenu FR dans `_source_cv_fr.html`, puis : `python build_bilingual.py`
+3. Pour refiger la source depuis `index.html` : `python build_bilingual.py --bootstrap`
+4. Pousser sur GitHub **uniquement après validation visuelle**
+
 ---
 
 ## Projets phares

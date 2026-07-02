@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Tayier NIMAIT | Hybrid 2026 FINAL 2</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Hanken+Grotesk:wght@600;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --sp-1: 3px;
+      --sp-2: 5px;
+      --sp-3: 7px;
+      --sp-4: 10px;
+      --fs-body: 10pt;
+      --fs-sm: 8.5pt;
+      --fs-xs: 7.8pt;
+      --lh: 1.48;
+      --ink: #1a1a1a;
+      --muted: #444;
+      --line: #ccc;
+      --accent: #2563eb;
+    }
+
+    @page {
+      size: A4;
+      margin: 8mm 10mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      font-size: var(--fs-body);
+      line-height: var(--lh);
+      color: var(--ink);
+      background: #e8e8e8;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .cv {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 8px auto;
+      padding: 8mm 10mm 8mm;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+    }
+
+    .section {
+      margin-bottom: var(--sp-3);
+    }
+
+    .section--flat {
+      margin-bottom: var(--sp-2);
+    }
+
+    .section__head {
+      margin: 0 0 var(--sp-2);
+      font-family: "Hanken Grotesk", sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 1px;
+    }
+
+    .section__body {
+      margin: 0;
+    }
+
+    /* Header v39 */
+    #cv-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto;
+      gap: var(--sp-2) var(--sp-4);
+      padding-bottom: var(--sp-3);
+      border-bottom: 1.5px solid var(--ink);
+    }
+
+    .header-main {
+      grid-column: 1;
+    }
+
+    .header-photo {
+      grid-column: 2;
+      grid-row: 1 / 3;
+      align-self: start;
+      width: 52px;
+      height: 52px;
+      object-fit: cover;
+      object-position: center 12%;
+      border: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Hanken Grotesk", sans-serif;
+      font-size: 16pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      margin: 1px 0 0;
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #333;
+      line-height: 1.25;
+    }
+
+    .subtitle span {
+      font-weight: 400;
+      color: #777;
+    }
+
+    .promise {
+      margin: var(--sp-2) 0 0;
+      font-size: 9.5pt;
+      font-weight: 700;
+      line-height: 1.3;
+      max-width: 98%;
+    }
+
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2px var(--sp-3);
+      margin-top: var(--sp-2);
+      font-size: var(--fs-sm);
+      color: var(--muted);
+      line-height: 1.3;
+    }
+
+    .header-meta a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .header-meta .sep {
+      color: #bbb;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--sp-2) var(--sp-3);
+      margin-top: var(--sp-2);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 7px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    .slogan {
+      font-size: var(--fs-xs);
+      font-style: italic;
+      color: #888;
+    }
+
+    .header-extra {
+      grid-column: 1 / -1;
+      font-size: var(--fs-xs);
+      color: #555;
+      line-height: 1.35;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px var(--sp-4);
+      padding-top: var(--sp-1);
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .header-extra .hi {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    #profile .section__body {
+      margin: 0;
+      padding: var(--sp-2) var(--sp-3);
+      background: #f5f5f5;
+      border-left: 2px solid #ddd;
+      font-size: var(--fs-body);
+      line-height: var(--lh);
+      text-align: justify;
+    }
+
+    #method .section__body {
+      text-align: center;
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      padding: var(--sp-2) var(--sp-3);
+      border: 1px solid var(--line);
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    #cv-main {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: var(--sp-4);
+      align-items: start;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-2) var(--sp-3);
+    }
+
+    .skills-grid h3 {
+      margin: 0 0 2px;
+      font-size: 8.5pt;
+      font-weight: 700;
+    }
+
+    ul.bullets {
+      margin: 0;
+      padding-left: 14px;
+      font-size: var(--fs-sm);
+      line-height: var(--lh);
+      color: var(--muted);
+      list-style-type: disc;
+    }
+
+    ul.bullets li {
+      margin-bottom: 1px;
+      padding-left: 2px;
+    }
+
+    ul.bullets--body {
+      font-size: 9pt;
+    }
+
+    .job {
+      margin-bottom: var(--sp-3);
+    }
+
+    .job__title {
+      font-weight: 700;
+      font-size: 9.5pt;
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    .job__meta {
+      font-size: var(--fs-sm);
+      color: #555;
+      font-style: italic;
+      margin: 1px 0 2px;
+    }
+
+    .job__lines .lbl {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .project {
+      border: 1px solid #ddd;
+      background: #f8f9fa;
+      padding: 5px 7px;
+      margin-bottom: var(--sp-3);
+      border-radius: 2px;
+    }
+
+    .project__tag {
+      font-size: 7pt;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin: 0 0 2px;
+    }
+
+    .project__title {
+      margin: 0 0 3px;
+      font-size: 9.5pt;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .project__row {
+      margin: 0 0 1px;
+      font-size: var(--fs-sm);
+      line-height: var(--lh);
+      color: var(--muted);
+    }
+
+    .project__row .k {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .project a {
+      color: var(--accent);
+    }
+
+    .other ul.bullets {
+      font-size: 9pt;
+    }
+
+    /* Footer v39 */
+    #cv-footer {
+      margin-top: 10px;
+      padding-top: 7px;
+      border-top: 1px solid var(--line);
+      flex-shrink: 0;
+      clear: both;
+    }
+
+    .footer-title {
+      display: flex;
+      gap: var(--sp-4);
+      margin-bottom: 6px;
+      margin-top: 2px;
+      font-family: "Hanken Grotesk", sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 1px;
+    }
+
+    .footer-title span:first-child {
+      flex: 1.4;
+    }
+
+    .footer-title span:last-child {
+      flex: 0.6;
+    }
+
+    .footer-cols {
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: var(--sp-4);
+      font-size: var(--fs-xs);
+      line-height: var(--lh);
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 8px;
+    }
+
+    .edu-hi {
+      background: #eff6ff;
+      border-left: 2px solid var(--accent);
+      padding: 3px 5px;
+    }
+
+    .langues p {
+      margin: 0;
+    }
+
+    .print-btn {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      z-index: 1000;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      font-size: 10pt;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 6px;
+      box-shadow: 0 2px 10px rgba(37, 99, 235, 0.35);
+      letter-spacing: 0.02em;
+    }
+
+    .print-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .print-btn::before {
+      content: "⬇";
+      font-size: 11pt;
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 7mm 9mm;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .cv {
+        margin: 0;
+        padding: 6.5mm 9mm 5.5mm;
+        gap: 5px;
+        max-height: none;
+        overflow: visible;
+      }
+
+      #cv-header {
+        padding-bottom: 5px;
+        gap: 4px 8px;
+      }
+
+      #profile .section__body {
+        padding: 4px 8px;
+      }
+
+      #method .section__body {
+        padding: 4px 8px;
+      }
+
+      .section {
+        margin-bottom: 5px;
+      }
+
+      .section--flat {
+        margin-bottom: 4px;
+      }
+
+      .job {
+        margin-bottom: 5px;
+      }
+
+      .project {
+        margin-bottom: 5px;
+        padding: 4px 6px;
+      }
+
+      #cv-footer {
+        margin-top: 8px;
+        padding-top: 6px;
+      }
+
+      .footer-title {
+        margin-bottom: 4px;
+      }
+
+      .edu-grid {
+        gap: 3px 6px;
+      }
+
+      .edu-hi {
+        padding: 2px 4px;
+      }
+
+      .print-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <article class="cv">
+
+    <header id="cv-header">
+      <div class="header-main">
+        <h1>Tayier NIMAIT</h1>
+        <p class="subtitle">AI Product Builder <span>· Python · FastAPI · React · .NET</span></p>
+        <p class="promise">Je transforme vos idées en produits Web, SaaS &amp; IA.</p>
+        <div class="header-meta">
+          <a href="mailto:ntparis9@gmail.com">ntparis9@gmail.com</a>
+          <span class="sep">|</span>
+          <span>07 53 21 08 64</span>
+          <span class="sep">|</span>
+          <span>Paris et périphérie</span>
+          <span class="sep">|</span>
+          <a href="https://www.linkedin.com/in/tayier-dev-ai-data/">LinkedIn</a>
+          <span class="sep">|</span>
+          <a href="https://github.com/ta-dev-ai">GitHub</a>
+        </div>
+        <div class="badge-row">
+          <span class="badge">40+ MVP &amp; PROTOTYPES IA</span>
+          <span class="slogan">Transforming Ideas into AI Products</span>
+        </div>
+      </div>
+      <img class="header-photo" src="assets/photo_tayier.jpg" alt="Tayier NIMAIT" width="52" height="52" />
+      <div class="header-extra">
+        <span>Disponible pour CDI, missions et collaborations</span>
+        <span class="hi">Portfolio et démonstrations sur demande</span>
+      </div>
+    </header>
+
+    <section id="profile" class="section section--flat">
+      <h2 class="section__head">Profil</h2>
+      <p class="section__body">J'aide les entreprises et les entrepreneurs à transformer leurs idées en produits
+        numériques utilisables et évolutifs.</p>
+    </section>
+
+    <section id="method" class="section section--flat">
+      <p class="section__body">Idée → Conception → Prototype IA → MVP → Industrialisation</p>
+    </section>
+
+    <main id="cv-main">
+      <div>
+        <section id="skills" class="section">
+          <h2 class="section__head">Compétences</h2>
+          <div class="section__body skills-grid">
+            <div>
+              <h3>Ce que je livre</h3>
+              <ul class="bullets">
+                <li>Applications IA prêtes au déploiement : sécurité documentaire, agents conversationnels</li>
+                <li>SaaS et applications web/mobile, du prototype à l'industrialisation</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Technologies</h3>
+              <ul class="bullets">
+                <li>Python, FastAPI, Pydantic, React, TypeScript</li>
+                <li>LangChain, Ollama, RAG, LLM, Docker, Git, CI/CD</li>
+                <li>PostgreSQL, SQL, C# / .NET, pytest, Agile</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" class="section">
+          <h2 class="section__head">Expérience professionnelle</h2>
+          <div class="section__body">
+            <article class="job">
+              <p class="job__title">Stage pratique Cybersécurité &amp; IA — GRETA</p>
+              <p class="job__meta">04/05/2026 — 04/06/2026 · Paris · Python &amp; Objets connectés</p>
+              <ul class="bullets bullets--body job__lines">
+                <li><span class="lbl">Résultat :</span> MVP LLM Security Gateway livré — filtrage documentaire et prompt
+                  injection.</li>
+                <li><span class="lbl">Développement :</span> sujet choisi, mené en autonomie de l'idée au produit
+                  testable.</li>
+                <li><span class="lbl">Évolution :</span> V2 personnelle vers SaaS B2B (traçabilité, anonymisation,
+                  suivi).</li>
+              </ul>
+            </article>
+            <article class="job">
+              <p class="job__title">Assistant IA (Stage) — KSPR Consulting</p>
+              <p class="job__meta">20/01/2026 — 20/02/2026 · Paris</p>
+              <ul class="bullets bullets--body job__lines">
+                <li><span class="lbl">Résultat :</span> prototype IA validé avec les utilisateurs finaux.</li>
+                <li><span class="lbl">Développement :</span> cycle Agile complet — accessibilité web par langage
+                  naturel.</li>
+              </ul>
+            </article>
+            <article class="job">
+              <p class="job__title">Développeur Full Stack — Cegi Santé</p>
+              <p class="job__meta">Juin 2023 — Octobre 2023</p>
+              <ul class="bullets bullets--body job__lines">
+                <li><span class="lbl">Résultat :</span> +50&nbsp;% de traçabilité médicale.</li>
+                <li><span class="lbl">Développement :</span> applications C# / .NET et React — traçabilité interne
+                  insuffisante corrigée.</li>
+              </ul>
+            </article>
+            <article class="job">
+              <p class="job__title">Développeur Full Stack (Stage) — Omnilia</p>
+              <p class="job__meta">2022</p>
+              <ul class="bullets bullets--body job__lines">
+                <li><span class="lbl">Résultat :</span> fonctionnalités back et front livrées sur plateforme SaaS
+                  e-commerce.</li>
+                <li><span class="lbl">Développement :</span> participation complète côté serveur et interface.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <div>
+        <section id="projects" class="section">
+          <h2 class="section__head">Projets phares 2026</h2>
+          <div class="section__body">
+            <article class="project">
+              <p class="project__tag">1er projet phare · développement actif</p>
+              <h3 class="project__title">LLM Security Gateway — sécurité documentaire IA</h3>
+              <p class="project__row"><span class="k">Problème :</span> les entreprises utilisent des LLM sans moyen
+                simple de filtrer documents risqués et attaques par prompt injection.</p>
+              <p class="project__row"><span class="k">Solution :</span> plateforme d'analyse qui localise visuellement
+                la zone à risque dans le document (pas une simple classification), détecte les attaques en 20 langues,
+                et génère un résumé du document.</p>
+              <p class="project__row"><span class="k">Résultat :</span> prototype MVP démontré — développement actif. <a
+                  href="https://www.linkedin.com/feed/update/urn:li:activity:7468573770484617216/">Démo LinkedIn</a> ·
+                <a href="https://github.com/ta-dev-ai/llm-security-gateway-showcase">Vitrine GitHub</a>.</p>
+              <p class="project__row"><span class="k">Contexte :</span> stage cybersécurité &amp; IA — Python &amp;
+                Objets connectés (GRETA, 04/05–04/06/2026).</p>
+              <p class="project__row"><span class="k">Évolution :</span> V2 personnelle vers SaaS B2B — traçabilité par
+                document, suivi de progression, anonymisation des données confidentielles.</p>
+              <p class="project__row"><span class="k">Tech :</span> Python, FastAPI, Ollama, FAISS.</p>
+            </article>
+            <article class="project">
+              <p class="project__tag">2e projet phare · MVP en ~2 jours</p>
+              <h3 class="project__title">LivreAudio (ListenDoc by Parleo)</h3>
+              <p class="project__row"><span class="k">Problème :</span> contenus longs impossibles à consommer en
+                déplacement.</p>
+              <p class="project__row"><span class="k">Solution :</span> manuscrit → audio local + lecteur synchronisé
+                texte-voix + export ZIP.</p>
+              <p class="project__row"><span class="k">Résultat :</span> prototype fonctionnel livré en 2 jours. <a
+                  href="https://www.linkedin.com/pulse/listendoc-prototype-mvp-tayier-nimait-yadze">Démo LinkedIn (40
+                  s)</a>.</p>
+              <p class="project__row"><span class="k">Contexte :</span> projet personnel — CDC étudié, développé en
+                autonomie (juin 2026).</p>
+              <p class="project__row"><span class="k">Évolution :</span> vers une version SaaS, puis desktop.</p>
+              <p class="project__row"><span class="k">Tech :</span> React 19, TypeScript, FastAPI, Edge TTS, Redux.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="other" class="section" style="margin-bottom:4px">
+          <h2 class="section__head">Autres réalisations</h2>
+          <div class="section__body other">
+            <ul class="bullets">
+              <li><strong>Visualisation Rénovation Paris</strong> — seul, 15 jours : 10 ans de données rendues lisibles.
+                Évolution agent IA conversationnel.</li>
+              <li><strong>smart-facturation-ai</strong> — réduit la saisie manuelle de facturation PME.</li>
+              <li><strong>Atlas-Omni-Launcher / RAG Intelligence Lab</strong> — orchestration multi-modèles, recherche
+                documentaire IA.</li>
+              <li><strong>Solena / Smart QR</strong> — transforme contenus et workflows en outils utilisables.</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer id="cv-footer">
+      <div class="footer-title">
+        <span>Formation</span>
+        <span>Langues</span>
+      </div>
+      <div class="footer-cols">
+        <div class="edu-grid">
+          <div class="edu-hi"><strong>IA appliquée &amp; Data Analyse</strong> — GRETA · Attestation · 20/02/2026 ·
+            stage Assistant IA — KSPR Consulting · 20/01–20/02/2026</div>
+          <div class="edu-hi"><strong>Python &amp; Objets connectés (IoT)</strong> — GRETA · Attestation · 04–06/2026 ·
+            module cybersécurité IA · stage 04/05–04/06/2026</div>
+          <div><strong>Bachelor Concepteur Logiciel</strong> — OpenClassrooms · RNCP Bac+3 | 05/2025</div>
+          <div><strong>Développeur C#.NET / Angular</strong> — M2I | 03/2023<br><strong>Concepteur Développeur
+              Apps</strong> — Doranco | 08/2022</div>
+        </div>
+        <div class="langues">
+          <p>Ouïghour (maternelle)<br>Français (courant)<br>Anglais (professionnel)<br>Chinois (courant)<br>Turc
+            (courant)</p>
+        </div>
+      </div>
+    </footer>
+
+  </article>
+</body>
+
+</html>
