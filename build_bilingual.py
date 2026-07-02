@@ -5,7 +5,25 @@ from pathlib import Path
 publish = Path(__file__).parent
 doc_cv = Path(r"C:\Users\ntpar\Dev_IT\Projet_depo\Projet_IA\LLM Security Gateway\LLM_Security_Gateway_Core_Prive\doc\cv")
 
-fr_html = (publish / "index.html").read_text(encoding="utf-8")
+def extract_cv_article(html: str) -> str:
+    start = html.find('<article class="cv">')
+    footer_start = html.find('<footer id="cv-footer">', start)
+    end = html.find("</article>", footer_start)
+    if start == -1 or footer_start == -1 or end == -1:
+        raise SystemExit("CV article boundaries not found")
+    return html[start : end + len("</article>")]
+
+
+# Source complète depuis git (avant bug bilingue)
+import subprocess
+
+subprocess.run(
+    ["git", "show", "f2e39e9:index.html"],
+    stdout=open(Path(__file__).parent / "_source_full.html", "w", encoding="utf-8"),
+    check=True,
+    cwd=Path(__file__).parent,
+)
+fr_html = (Path(__file__).parent / "_source_full.html").read_text(encoding="utf-8")
 
 repl_fr = [
     (
@@ -192,16 +210,16 @@ repl_en = [
 for old, new in repl_en:
     en_html = en_html.replace(old, new)
 
-m_fr = re.search(r'<article class="cv">.*?</article>', fr_html, re.S)
-m_en = re.search(r'<article class="cv">.*?</article>', en_html, re.S)
+m_fr = extract_cv_article(fr_html)
+m_en = extract_cv_article(en_html)
 m_head = re.search(r"<head>.*?</head>", fr_html, re.S)
 if not (m_fr and m_en and m_head):
     raise SystemExit("parse failed")
 
-fr_body = m_fr.group(0).replace(
+fr_body = m_fr.replace(
     '<article class="cv">', '<article class="cv cv-lang active" id="cv-fr" lang="fr">', 1
 )
-en_body = m_en.group(0).replace(
+en_body = m_en.replace(
     '<article class="cv">', '<article class="cv cv-lang" id="cv-en" lang="en">', 1
 )
 head = m_head.group(0)
