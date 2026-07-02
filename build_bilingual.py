@@ -25,13 +25,35 @@ subprocess.run(
 )
 fr_html = (Path(__file__).parent / "_source_full.html").read_text(encoding="utf-8")
 
+def reorder_experience(html: str, kspr_title: str, greta_title: str) -> str:
+    kspr_re = re.compile(
+        rf'<article class="job">\s*<p class="job__title">{re.escape(kspr_title)}</p>.*?</article>',
+        re.S,
+    )
+    greta_re = re.compile(
+        rf'<article class="job">\s*<p class="job__title">{re.escape(greta_title)}</p>.*?</article>',
+        re.S,
+    )
+    m_kspr = kspr_re.search(html)
+    m_greta = greta_re.search(html)
+    if not m_kspr or not m_greta or m_greta.start() < m_kspr.start():
+        return html
+    kspr_block = m_kspr.group(0)
+    greta_block = m_greta.group(0)
+    return html[: m_kspr.start()] + greta_block + "\n            " + kspr_block + html[m_greta.end() :]
+
+
 repl_fr = [
     (
         "AI Product Engineer <span>(ML / IA appliquée)</span>",
         "AI Product Builder <span>· Python · FastAPI · React · .NET</span>",
     ),
     (
-        "J'aide les entreprises et les entrepreneurs à transformer leurs idées en produits numériques utilisables et évolutifs.",
+        '<p class="promise">J\'aide les entreprises et les entrepreneurs à transformer leurs idées en produits numériques utilisables et évolutifs.</p>',
+        '<p class="promise">Je transforme vos idées en produits Web, SaaS &amp; IA.</p>',
+    ),
+    (
+        "Je transforme votre idée en MVP fonctionnel, puis en produit prêt à être déployé et à évoluer.",
         "Je transforme vos idées en produits Web, SaaS &amp; IA.",
     ),
     ("<span>Paris</span>", "<span>Paris et périphérie</span>"),
@@ -41,11 +63,17 @@ repl_fr = [
     ),
     (
         "<p class=\"section__body\">J'aide les startups, les PME et les entrepreneurs à transformer leurs idées en applications web, mobiles et IA, testées, documentées et prêtes à évoluer.</p>",
-        "<p class=\"section__body\">Je transforme vos idées en produits Web, SaaS &amp; IA — utilisables, testés et prêts à évoluer.</p>",
+        "<p class=\"section__body\">J'aide les entreprises et les entrepreneurs à transformer leurs idées en produits numériques utilisables et évolutifs.</p>",
     ),
 ]
 for old, new in repl_fr:
     fr_html = fr_html.replace(old, new)
+
+fr_html = reorder_experience(
+    fr_html,
+    "Assistant IA (Stage) — KSPR Consulting",
+    "Stage pratique Cybersécurité &amp; IA — GRETA",
+)
 
 en_html = fr_html
 repl_en = [
@@ -59,8 +87,8 @@ repl_en = [
         "I transform your ideas into Web, SaaS &amp; AI products.",
     ),
     (
-        "Je transforme vos idées en produits Web, SaaS &amp; IA — utilisables, testés et prêts à évoluer.",
-        "I transform your ideas into Web, SaaS &amp; AI products — usable, tested and ready to scale.",
+        "<p class=\"section__body\">J'aide les entreprises et les entrepreneurs à transformer leurs idées en produits numériques utilisables et évolutifs.</p>",
+        "<p class=\"section__body\">I help companies and entrepreneurs turn their ideas into usable, scalable digital products.</p>",
     ),
     (
         "Disponible pour CDI, missions et collaborations",
@@ -209,6 +237,12 @@ repl_en = [
 ]
 for old, new in repl_en:
     en_html = en_html.replace(old, new)
+
+en_html = reorder_experience(
+    en_html,
+    "Assistant IA (Stage) — KSPR Consulting",
+    "Cybersecurity &amp; AI internship — GRETA",
+)
 
 m_fr = extract_cv_article(fr_html)
 m_en = extract_cv_article(en_html)
