@@ -76,7 +76,7 @@ KSPR_FORMATION_EN = (
     '<div class="edu-hi"><strong>AI Assistant (Internship)</strong> — KSPR Consulting · Internship · 20/01/2026–20/02/2026</div>'
 )
 FORMATION_GRID_FR = """        <div class="edu-grid">
-          <div class="edu-hi"><strong>Python &amp; Objets connectés (IoT)</strong> — GRETA · Attestation · 03–07/2026 · module cybersécurité IA · stage 04/05–04/06/2026</div>
+          <div class="edu-hi"><strong>Python &amp; Objets connectés (IoT)</strong> — GRETA · Attestation · 04–06/2026 · module cybersécurité IA · stage 04/05–04/06/2026</div>
           <div class="edu-hi"><strong>IA appliquée &amp; Data Analyse</strong> — GRETA · Attestation · 11/2025–02/2026</div>
           <div><strong>Bachelor Concepteur Logiciel</strong> — OpenClassrooms · RNCP Bac+3 | 05/2025</div>
           {kspr}
