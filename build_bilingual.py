@@ -89,10 +89,30 @@ FORMATION_GRID_SOURCE = """        <div class="edu-grid">
           <div><strong>Développeur C#.NET / Angular</strong> — M2I | 03/2023<br><strong>Concepteur Développeur Apps</strong> — Doranco | 08/2022</div>
         </div>"""
 
+LLM_LINKEDIN_DEMO = "https://www.linkedin.com/feed/update/urn:li:activity:7468573770484617216/"
+LLM_GITHUB = "https://github.com/ta-dev-ai/llm-security-gateway-showcase"
+LLM_RESULT_FR = (
+    f'<p class="project__row"><span class="k">Résultat :</span> prototype MVP démontré — développement actif. '
+    f'<a href="{LLM_LINKEDIN_DEMO}">Démo LinkedIn</a> · <a href="{LLM_GITHUB}">Vitrine GitHub</a>.</p>'
+)
+LLM_RESULT_EN = (
+    f'<p class="project__row"><span class="k">Result:</span> MVP prototype demonstrated — active development. '
+    f'<a href="{LLM_LINKEDIN_DEMO}">LinkedIn demo</a> · <a href="{LLM_GITHUB}">GitHub showcase</a>.</p>'
+)
+LLM_RESULT_SOURCE = (
+    '<p class="project__row"><span class="k">Résultat :</span> MVP livré en fin de stage (04/06/2026), '
+    'conçu et développé en autonomie. <a href="https://github.com/ta-dev-ai/llm-security-gateway-showcase">Vitrine GitHub</a>.</p>'
+)
+
 fr_html = fr_html.replace(
     '<p class="job__meta">Février 2026 — Présent · Paris</p>',
     '<p class="job__meta">20/01/2026 — 20/02/2026 · Paris</p>',
 )
+fr_html = fr_html.replace(
+    '<p class="project__tag">Projet principal officiel</p>',
+    '<p class="project__tag">1er projet phare · développement actif</p>',
+)
+fr_html = fr_html.replace(LLM_RESULT_SOURCE, LLM_RESULT_FR)
 fr_html = fr_html.replace(
     FORMATION_GRID_SOURCE,
     FORMATION_GRID_FR.format(kspr=KSPR_FORMATION_FR),
@@ -190,7 +210,6 @@ repl_en = [
         '<h2 class="section__head">Projets phares 2026</h2>',
         '<h2 class="section__head">Key projects 2026</h2>',
     ),
-    ("Projet principal officiel", "Main official project"),
     ("sécurité documentaire IA", "AI document security"),
     ('<span class="k">Problème :</span>', '<span class="k">Problem:</span>'),
     ('<span class="k">Solution :</span>', '<span class="k">Solution:</span>'),
@@ -205,11 +224,6 @@ repl_en = [
         "plateforme d'analyse qui localise visuellement la zone à risque dans le document (pas une simple classification), détecte les attaques en 20 langues, et génère un résumé du document.",
         "analysis platform that visually locates risk zones, detects attacks in 20 languages, and generates summaries.",
     ),
-    (
-        "MVP livré en fin de stage (04/06/2026), conçu et développé en autonomie.",
-        "MVP delivered at internship end (Jun 2026), designed and built independently.",
-    ),
-    ("Vitrine GitHub", "GitHub showcase"),
     (
         "stage cybersécurité &amp; IA — Python &amp; Objets connectés (GRETA, 04/05–04/06/2026).",
         "cybersecurity &amp; AI internship — Python &amp; IoT (GRETA, May–Jun 2026).",
@@ -268,6 +282,11 @@ for old, new in repl_en:
     en_html = en_html.replace(old, new)
 
 en_html = en_html.replace(KSPR_FORMATION_FR, KSPR_FORMATION_EN)
+en_html = en_html.replace(
+    '<p class="project__tag">1er projet phare · développement actif</p>',
+    '<p class="project__tag">1st key project · active development</p>',
+)
+en_html = en_html.replace(LLM_RESULT_FR, LLM_RESULT_EN)
 
 en_html = reorder_experience(
     en_html,
