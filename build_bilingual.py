@@ -99,6 +99,10 @@ LLM_RESULT_EN = (
     f'<p class="project__row"><span class="k">Result:</span> MVP prototype demonstrated — active development. '
     f'<a href="{LLM_LINKEDIN_DEMO}">LinkedIn demo</a> · <a href="{LLM_GITHUB}">GitHub showcase</a>.</p>'
 )
+LLM_RESULT_EN_PARTIAL = (
+    f'<p class="project__row"><span class="k">Result:</span> prototype MVP démontré — développement actif. '
+    f'<a href="{LLM_LINKEDIN_DEMO}">Démo LinkedIn</a> · <a href="{LLM_GITHUB}">Vitrine GitHub</a>.</p>'
+)
 LLM_RESULT_SOURCE = (
     '<p class="project__row"><span class="k">Résultat :</span> MVP livré en fin de stage (04/06/2026), '
     'conçu et développé en autonomie. <a href="https://github.com/ta-dev-ai/llm-security-gateway-showcase">Vitrine GitHub</a>.</p>'
@@ -286,7 +290,7 @@ en_html = en_html.replace(
     '<p class="project__tag">1er projet phare · développement actif</p>',
     '<p class="project__tag">1st key project · active development</p>',
 )
-en_html = en_html.replace(LLM_RESULT_FR, LLM_RESULT_EN)
+en_html = en_html.replace(LLM_RESULT_EN_PARTIAL, LLM_RESULT_EN)
 
 en_html = reorder_experience(
     en_html,
