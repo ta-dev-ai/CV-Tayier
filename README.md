@@ -1,29 +1,22 @@
-﻿# Tayier NIMAIT — AI Product Engineer
+﻿# Tayier NIMAIT — AI Product Builder
 
 ![De l'idée au produit](assets/banner.png)
 
-**J'aide les entreprises et les entrepreneurs à transformer leurs idées en produits numériques utilisables et évolutifs.**
+**FR :** Je transforme vos idées en produits Web, SaaS & IA.  
+**EN :** I transform your ideas into Web, SaaS & AI products.
 
-Disponible pour **CDI**, **missions** et **collaborations**.
+Disponible pour **CDI**, **missions** et **collaborations** · Available for **full-time**, **freelance** and **collaborations**.
 
 ---
 
-## CV en ligne
+## CV en ligne (FR / EN)
 
 | Lien | Description |
 |------|-------------|
-| [**Voir le CV**](https://ta-dev-ai.github.io/CV-Tayier/) | Version web (GitHub Pages) |
-| [CV HTML](CV_Hybrid_2026_FINAL_2.html) | Fichier source — version officielle 2026 |
+| [**Voir le CV**](https://ta-dev-ai.github.io/CV-Tayier/) | Version web avec onglets Français / English |
+| [CV HTML](CV_Hybrid_2026_FINAL_2.html) | Fichier source bilingue |
 
----
-
-## Ce que je construis
-
-- Applications **web** et **mobile**
-- Plateformes **SaaS**
-- Solutions **IA** (agents, sécurité documentaire, RAG)
-
-Sur mesure · sécurisée · évolutive · prête à produire
+Sur la page : onglet **Français** ou **English**, puis bouton **Télécharger le CV** / **Download CV**.
 
 ---
 
@@ -36,18 +29,8 @@ Sur mesure · sécurisée · évolutive · prête à produire
 
 ---
 
-## Stack
-
-`Python` · `FastAPI` · `React` · `.NET` · `PostgreSQL` · `Docker`
-
----
-
 ## Contact
 
 - **Email :** [ntparis9@gmail.com](mailto:ntparis9@gmail.com)
 - **LinkedIn :** [linkedin.com/in/tayier-dev-ai-data](https://www.linkedin.com/in/tayier-dev-ai-data/)
 - **GitHub :** [github.com/ta-dev-ai](https://github.com/ta-dev-ai)
-
----
-
-*CV Hybrid 2026 — FINAL 2*
