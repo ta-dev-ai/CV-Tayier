@@ -69,6 +69,15 @@ repl_fr = [
 for old, new in repl_fr:
     fr_html = fr_html.replace(old, new)
 
+fr_html = fr_html.replace(
+    '<p class="job__meta">Février 2026 — Présent · Paris</p>',
+    '<p class="job__meta">20/01/2026 — 20/02/2026 · Paris</p>',
+)
+fr_html = fr_html.replace(
+    '<div class="edu-hi"><strong>IA appliquée &amp; Data Analyse</strong> — GRETA · Attestation · 11/2025–02/2026</div>',
+    '<div class="edu-hi"><strong>IA appliquée &amp; Data Analyse</strong> — GRETA · Attestation · 11/2025–02/2026</div>\n          <div class="edu-hi"><strong>Assistant IA (Stage) — KSPR Consulting</strong> · Stage · 20/01/2026–20/02/2026</div>',
+)
+
 fr_html = reorder_experience(
     fr_html,
     "Assistant IA (Stage) — KSPR Consulting",
@@ -114,7 +123,7 @@ repl_en = [
         '<h2 class="section__head">Expérience professionnelle</h2>',
         '<h2 class="section__head">Professional experience</h2>',
     ),
-    ("Février 2026 — Présent · Paris", "Feb 2026 — Present · Paris"),
+    ("Février 2026 — Présent · Paris", "20/01/2026 — 20/02/2026 · Paris"),
     ('<span class="lbl">Résultat :</span>', '<span class="lbl">Result:</span>'),
     ('<span class="lbl">Développement :</span>', '<span class="lbl">Delivery:</span>'),
     ('<span class="lbl">Évolution :</span>', '<span class="lbl">Evolution:</span>'),
@@ -237,6 +246,11 @@ repl_en = [
 ]
 for old, new in repl_en:
     en_html = en_html.replace(old, new)
+
+en_html = en_html.replace(
+    '<div class="edu-hi"><strong>IA appliquée &amp; Data Analyse</strong> — GRETA · Attestation · 11/2025–02/2026</div>',
+    '<div class="edu-hi"><strong>IA appliquée &amp; Data Analyse</strong> — GRETA · Attestation · 11/2025–02/2026</div>\n          <div class="edu-hi"><strong>AI Assistant (Internship) — KSPR Consulting</strong> · Internship · 20/01/2026–20/02/2026</div>',
+)
 
 en_html = reorder_experience(
     en_html,
