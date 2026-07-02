@@ -86,8 +86,9 @@ def bootstrap_source_from_index() -> None:
 
 
 def assert_locked_content(html: str) -> None:
+    normalized = re.sub(r"\s+", " ", html)
     for needle, label in LOCKED_MARKERS:
-        if needle not in html:
+        if needle not in normalized:
             raise SystemExit(f"ERREUR contenu verrouillé manquant ({label}) : {needle!r}")
     profile = re.search(r'<section id="profile".*?</section>', html, re.S)
     if profile and "Je transforme vos idées en produits Web, SaaS" in profile.group(0):
