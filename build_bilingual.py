@@ -26,10 +26,10 @@ LOCKED_MARKERS = [
 ]
 
 GRETIA_FORMATION_FR = (
-    '<div class="edu-hi"><strong>IA appliquée &amp; Data Analyse</strong> — GRETA · Attestation · 20/02/2026 · stage Assistant IA — KSPR Consulting · 20/01–20/02/2026</div>'
+    '<div class="edu-hi"><strong>IA appliquée &amp; Data Analyse</strong> — GRETA · Attestation · 11/2025–20/02/2026 · stage Assistant IA — KSPR Consulting · 20/01–20/02/2026</div>'
 )
 GRETIA_FORMATION_EN = (
-    '<div class="edu-hi"><strong>Applied AI &amp; Data Analysis</strong> — GRETA · Certificate · 20/02/2026 · AI Assistant internship — KSPR Consulting · 20/01–20/02/2026</div>'
+    '<div class="edu-hi"><strong>Applied AI &amp; Data Analysis</strong> — GRETA · Certificate · 11/2025–20/02/2026 · AI Assistant internship — KSPR Consulting · 20/01–20/02/2026</div>'
 )
 
 LLM_LINKEDIN_DEMO = "https://www.linkedin.com/feed/update/urn:li:activity:7468573770484617216/"
